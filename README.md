@@ -1,34 +1,89 @@
-<div align="center">
-  <a href="https://github.com/ZMoonWeb/Z-Blog">
-    <img src="public/assets/img/ZMoon.png" width="96" alt="Z-Blog Logo">
-  </a>
+<p align="center">
+  <img src="public/assets/img/Z-Blog.png" alt="Z-Blog" width="900">
+</p>
 
-  <h1>Z-Blog</h1>
+<p align="center">
+  <a href="./README.md">简体中文</a>
+  <span> | </span>
+  <a href="./README-zh-TW.md">繁體中文</a>
+</p>
 
-  <p>一个轻量、极简、可自托管的 PHP 博客系统。</p>
-
-  <p>
-    <a href="https://github.com/ZMoonWeb/Z-Blog/releases"><img alt="GitHub release" src="https://img.shields.io/github/v/release/ZMoonWeb/Z-Blog?style=flat-square&color=111827"></a>
-    <a href="https://github.com/ZMoonWeb/Z-Blog/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/github/license/ZMoonWeb/Z-Blog?style=flat-square&color=111827"></a>
-    <a href="https://github.com/ZMoonWeb/Z-Blog/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/ZMoonWeb/Z-Blog?style=flat-square&logo=github&color=111827"></a>
-    <a href="https://github.com/ZMoonWeb/Z-Blog/network/members"><img alt="GitHub forks" src="https://img.shields.io/github/forks/ZMoonWeb/Z-Blog?style=flat-square&logo=github&color=111827"></a>
-    <a href="https://github.com/ZMoonWeb/Z-Blog/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/ZMoonWeb/Z-Blog?style=flat-square&color=111827"></a>
-  </p>
-
-  <p>
-    <img alt="PHP" src="https://img.shields.io/badge/PHP-%3E%3D%208.1-777BB4?style=flat-square&logo=php&logoColor=white">
-    <img alt="Composer" src="https://img.shields.io/badge/Composer-ready-885630?style=flat-square&logo=composer&logoColor=white">
-    <img alt="Last commit" src="https://img.shields.io/github/last-commit/ZMoonWeb/Z-Blog?style=flat-square&color=111827">
-    <img alt="Repo size" src="https://img.shields.io/github/repo-size/ZMoonWeb/Z-Blog?style=flat-square&color=111827">
-    <img alt="Top language" src="https://img.shields.io/github/languages/top/ZMoonWeb/Z-Blog?style=flat-square&color=111827">
-  </p>
-</div>
+<p align="center">
+  <a href="https://github.com/ZMoonWeb/Z-Blog/releases/latest"><img alt="Release" src="https://img.shields.io/github/v/release/ZMoonWeb/Z-Blog?style=flat-square&label=release&labelColor=475569&color=38bdf8"></a>&nbsp;&nbsp;&nbsp;
+  <a href="https://github.com/ZMoonWeb/Z-Blog/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/github/license/ZMoonWeb/Z-Blog?style=flat-square&label=license&labelColor=475569&color=4ade80"></a>&nbsp;&nbsp;&nbsp;
+  <a href="https://github.com/ZMoonWeb/Z-Blog/stargazers"><img alt="Stars" src="https://img.shields.io/github/stars/ZMoonWeb/Z-Blog?style=flat-square&label=stars&labelColor=475569&color=facc15"></a>&nbsp;&nbsp;&nbsp;
+  <a href="https://github.com/ZMoonWeb/Z-Blog/network/members"><img alt="Forks" src="https://img.shields.io/github/forks/ZMoonWeb/Z-Blog?style=flat-square&label=forks&labelColor=475569&color=c084fc"></a>&nbsp;&nbsp;&nbsp;
+  <a href="https://github.com/ZMoonWeb/Z-Blog/issues"><img alt="Issues" src="https://img.shields.io/github/issues/ZMoonWeb/Z-Blog?style=flat-square&label=issues&labelColor=475569&color=fb7185"></a>&nbsp;&nbsp;&nbsp;
+  <img alt="Top language" src="https://img.shields.io/github/languages/top/ZMoonWeb/Z-Blog?style=flat-square&label=language&labelColor=475569&color=a78bfa">&nbsp;&nbsp;&nbsp;
+  <img alt="Last commit" src="https://img.shields.io/github/last-commit/ZMoonWeb/Z-Blog?style=flat-square&label=last%20commit&labelColor=475569&color=2dd4bf">&nbsp;&nbsp;&nbsp;
+  <img alt="Repo size" src="https://img.shields.io/github/repo-size/ZMoonWeb/Z-Blog?style=flat-square&label=repo%20size&labelColor=475569&color=22d3ee">
+</p>
 
 ## 简介
 
 Z-Blog 是一个从零搭建的 PHP 博客系统，定位是轻量、现代、易部署。它包含前台阅读体验、后台内容管理、留言互动、公告管理、活动审计、站点个性化配置和版本更新检测，适合个人博客、作品记录、项目日志和小型内容站点。
 
 项目不依赖大型框架，核心结构清晰，使用原生 PHP MVC 组织代码，并通过 Composer 管理必要依赖。
+
+## 界面预览
+
+**加载动画**
+
+<p align="center">
+  <span style="display: inline-block; width: 48%; text-align: center; vertical-align: top;">
+    <img src="public/assets/img/loading-light.png" alt="加载动画浅色模式" width="100%"><br>
+    <sub>浅色模式</sub>
+  </span>
+  <span style="display: inline-block; width: 48%; text-align: center; vertical-align: top;">
+    <img src="public/assets/img/loading-dark.png" alt="加载动画暗色模式" width="100%"><br>
+    <sub>暗色模式</sub>
+  </span>
+</p>
+
+**欢迎页**
+
+<p align="center">
+  <span style="display: inline-block; width: 48%; text-align: center; vertical-align: top;">
+    <img src="public/assets/img/welcome-light.png" alt="欢迎页浅色模式" width="100%"><br>
+    <sub>浅色模式</sub>
+  </span>
+  <span style="display: inline-block; width: 48%; text-align: center; vertical-align: top;">
+    <img src="public/assets/img/welcome-dark.png" alt="欢迎页暗色模式" width="100%"><br>
+    <sub>暗色模式</sub>
+  </span>
+</p>
+
+**首页**
+
+<p align="center">
+  <span style="display: inline-block; width: 48%; text-align: center; vertical-align: top;">
+    <img src="public/assets/img/home-light.png" alt="首页浅色模式" width="100%"><br>
+    <sub>浅色模式</sub>
+  </span>
+  <span style="display: inline-block; width: 48%; text-align: center; vertical-align: top;">
+    <img src="public/assets/img/home-dark.png" alt="首页暗色模式" width="100%"><br>
+    <sub>暗色模式</sub>
+  </span>
+</p>
+<h2 style="margin-top: 24px; margin-bottom: 0; padding-bottom: 0;">赞助商</h2>
+<details style="margin-top: 0;"><summary><strong>想成为赞助商？点我了解</strong></summary>
+欢迎通过邮件联系：<a href="mailto:3635716439@qq.com">3635716439@qq.com</a>
+</details>
+<br>
+<table>
+  <tr>
+    <th align="left">图标</th>
+    <th align="left">名称</th>
+    <th align="left">简介</th>
+    <th align="left">跳转</th>
+  </tr>
+  <tr>
+    <td><img src="public/assets/img/ZMoon.png" width="44" alt="筑梦科技"></td>
+    <td>筑梦科技</td>
+    <td>开发商</td>
+    <td><a href="https://qm.qq.com/q/DYI7jJPTDq">点我了解详情</a></td>
+  </tr>
+</table>
 
 ## 功能特性
 
