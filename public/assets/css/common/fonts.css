@@ -1,0 +1,58 @@
+/*
+ * MiSans 本地字体声明
+ * 文件位于 /assets/font/MiSans/woff2/，仅加载 woff2 以最小化体积
+ *
+ * 字重策略：仅调用 400 (Regular)、700 (Bold) 与 900 (Bold 映射)
+ *   - 正文 / 默认                    → 400
+ *   - 加粗（h1-h6, strong, b, .bold） → 700
+ *   - 强强调 / 大标题                → 900
+ * 项目 CSS 中的字体字重统一为 400 / 700 / 900 三档，避免浏览器合成中间字重。
+ */
+@font-face {
+    font-family: 'MiSans';
+    src: url('/assets/font/MiSans/woff2/MiSans-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'MiSans';
+    src: url('/assets/font/MiSans/woff2/MiSans-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'MiSans';
+    src: url('/assets/font/MiSans/woff2/MiSans-Bold.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --font-misans: 'MiSans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea {
+    font-family: var(--font-misans);
+}
+
+/* 正文默认字重 400 */
+body {
+    font-weight: 400;
+}
+
+/* 标题与强调统一字重 700 —— 与 400 形成清晰对比 */
+h1, h2, h3, h4, h5, h6,
+strong, b,
+.bold {
+    font-weight: 700;
+}

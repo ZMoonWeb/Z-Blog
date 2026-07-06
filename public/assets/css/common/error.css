@@ -1,0 +1,38 @@
+@import url('/assets/css/common/fonts.css');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5f7fa;
+    color: #333;
+}
+.container {
+    text-align: center;
+    padding: 48px 40px;
+    max-width: 420px;
+    width: 90%;
+}
+h1 {
+    font-size: 64px;
+    font-weight: 700;
+    color: #ddd;
+    margin-bottom: 12px;
+    line-height: 1;
+}
+p {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 28px;
+}
+a {
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 700;
+}
+a:hover {
+    text-decoration: underline;
+}

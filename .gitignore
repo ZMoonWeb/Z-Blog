@@ -1,0 +1,14 @@
+.env
+
+/storage/logs/*
+!/storage/logs/.gitignore
+
+/storage/cache/*
+!/storage/cache/.gitignore
+
+/public/uploads/*
+!/public/uploads/.gitkeep
+
+*.log
+Thumbs.db
+.DS_Store
