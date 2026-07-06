@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="https://github.com/ZMoonWeb/Z-Blog/releases/latest"><img alt="Release" src="https://img.shields.io/github/v/release/ZMoonWeb/Z-Blog?style=flat-square&label=release&labelColor=475569&color=38bdf8"></a>&nbsp;&nbsp;&nbsp;
-  <a href="https://github.com/ZMoonWeb/Z-Blog/releases/latest"><img alt="Release downloads" src="https://img.shields.io/github/downloads/ZMoonWeb/Z-Blog/total?style=flat-square&label=release%20downloads&labelColor=475569&color=0ea5e9"></a>&nbsp;&nbsp;&nbsp;
+  <a href="https://github.com/ZMoonWeb/Z-Blog/releases/latest"><img alt="Release downloads" src="https://img.shields.io/github/downloads/ZMoonWeb/Z-Blog/total?style=flat-square&label=release%20downloads&labelColor=475569&color=0ea5e9&cacheSeconds=300"></a>&nbsp;&nbsp;&nbsp;
   <a href="https://github.com/ZMoonWeb/Z-Blog/blob/main/LICENSE"><img alt="License MIT" src="https://img.shields.io/badge/license-MIT-green?style=flat-square&labelColor=475569"></a>&nbsp;&nbsp;&nbsp;
   <a href="https://github.com/ZMoonWeb/Z-Blog/stargazers"><img alt="Stars" src="https://img.shields.io/github/stars/ZMoonWeb/Z-Blog?style=flat-square&label=stars&labelColor=475569&color=facc15"></a>&nbsp;&nbsp;&nbsp;
   <a href="https://github.com/ZMoonWeb/Z-Blog/network/members"><img alt="Forks" src="https://img.shields.io/github/forks/ZMoonWeb/Z-Blog?style=flat-square&label=forks&labelColor=475569&color=c084fc"></a>&nbsp;&nbsp;&nbsp;
