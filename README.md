@@ -10,11 +10,13 @@
 
 <p align="center">
   <a href="https://github.com/ZMoonWeb/Z-Blog/releases/latest"><img alt="Release" src="https://img.shields.io/github/v/release/ZMoonWeb/Z-Blog?style=flat-square&label=release&labelColor=475569&color=38bdf8"></a>&nbsp;&nbsp;&nbsp;
-  <a href="https://github.com/ZMoonWeb/Z-Blog/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/github/license/ZMoonWeb/Z-Blog?style=flat-square&label=license&labelColor=475569&color=4ade80"></a>&nbsp;&nbsp;&nbsp;
+  <a href="https://github.com/ZMoonWeb/Z-Blog/releases/latest"><img alt="Release downloads" src="https://img.shields.io/github/downloads/ZMoonWeb/Z-Blog/total?style=flat-square&label=release%20downloads&labelColor=475569&color=0ea5e9"></a>&nbsp;&nbsp;&nbsp;
+  <a href="https://github.com/ZMoonWeb/Z-Blog/blob/main/LICENSE"><img alt="License MIT" src="https://img.shields.io/badge/license-MIT-green?style=flat-square&labelColor=475569"></a>&nbsp;&nbsp;&nbsp;
   <a href="https://github.com/ZMoonWeb/Z-Blog/stargazers"><img alt="Stars" src="https://img.shields.io/github/stars/ZMoonWeb/Z-Blog?style=flat-square&label=stars&labelColor=475569&color=facc15"></a>&nbsp;&nbsp;&nbsp;
   <a href="https://github.com/ZMoonWeb/Z-Blog/network/members"><img alt="Forks" src="https://img.shields.io/github/forks/ZMoonWeb/Z-Blog?style=flat-square&label=forks&labelColor=475569&color=c084fc"></a>&nbsp;&nbsp;&nbsp;
   <a href="https://github.com/ZMoonWeb/Z-Blog/issues"><img alt="Issues" src="https://img.shields.io/github/issues/ZMoonWeb/Z-Blog?style=flat-square&label=issues&labelColor=475569&color=fb7185"></a>&nbsp;&nbsp;&nbsp;
-  <img alt="Top language" src="https://img.shields.io/github/languages/top/ZMoonWeb/Z-Blog?style=flat-square&label=language&labelColor=475569&color=a78bfa">&nbsp;&nbsp;&nbsp;
+  <img alt="Language PHP" src="https://img.shields.io/badge/language-PHP-777BB4?style=flat-square&logo=php&logoColor=white&labelColor=475569">&nbsp;&nbsp;&nbsp;
+  <img alt="Database MySQL" src="https://img.shields.io/badge/database-MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white&labelColor=475569">&nbsp;&nbsp;&nbsp;
   <img alt="Last commit" src="https://img.shields.io/github/last-commit/ZMoonWeb/Z-Blog?style=flat-square&label=last%20commit&labelColor=475569&color=2dd4bf">&nbsp;&nbsp;&nbsp;
   <img alt="Repo size" src="https://img.shields.io/github/repo-size/ZMoonWeb/Z-Blog?style=flat-square&label=repo%20size&labelColor=475569&color=22d3ee">
 </p>

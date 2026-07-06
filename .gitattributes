@@ -1,0 +1,3 @@
+# Keep GitHub Linguist focused on the application source.
+vendor/** linguist-vendored
+public/assets/css/** linguist-vendored
