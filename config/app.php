@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 return [
     'name' => $_ENV['APP_NAME'] ?? 'Blog',
-    'version' => trim((string) ($_ENV['APP_VERSION'] ?? '1.0.1')) ?: '1.0.1',
+    'version' => trim((string) ($_ENV['APP_VERSION'] ?? '1.0.2')) ?: '1.0.2',
     'env' => $_ENV['APP_ENV'] ?? 'production',
     'debug' => filter_var($_ENV['APP_DEBUG'] ?? false, FILTER_VALIDATE_BOOLEAN),
     'url' => $_ENV['APP_URL'] ?? 'http://localhost',

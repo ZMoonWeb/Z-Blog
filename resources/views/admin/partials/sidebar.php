@@ -172,6 +172,6 @@ $adminBootIndex = 0;
 
     <div class="admin-sidebar-footer">
         <span>当前版本</span>
-        <strong>Z-Blog v<?= \App\Core\Config::get('app.version', '1.0.1') ?></strong>
+        <strong>Z-Blog v<?= \App\Core\Config::get('app.version', '1.0.2') ?></strong>
     </div>
 </aside>

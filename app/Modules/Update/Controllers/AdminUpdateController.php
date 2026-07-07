@@ -153,18 +153,6 @@ class AdminUpdateController extends AdminControllerBase
             return;
         }
 
-        if ($this->updates->versionForCompare($targetVersion) === '1.0.1') {
-            $this->sendJsonResponse([
-                'success' => true,
-                'type' => 'success',
-                'message' => '暂无更新说明',
-                'latest_version' => $targetVersion,
-                'update_notes' => [],
-                'beijing_time' => $this->updates->beijingTime(),
-            ]);
-            return;
-        }
-
         try {
             $remote = $this->updates->requestUpdateInfo($updateUrl, [
                 'action' => 'get_update_notes',
@@ -188,6 +176,7 @@ class AdminUpdateController extends AdminControllerBase
                 'message' => $message,
                 'latest_version' => $targetVersion,
                 'update_notes' => $notes,
+                'notes' => $notes,
                 'release_url' => $this->updates->updateReleaseUrl($remote),
                 'beijing_time' => $this->updates->beijingTime(),
             ]);

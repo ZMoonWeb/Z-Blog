@@ -144,8 +144,8 @@ class SiteSettingService
 
     public function currentBlogVersion(): string
     {
-        $version = trim((string) Config::get('app.version', '1.0.1'));
-        return $version !== '' ? $version : '1.0.1';
+        $version = trim((string) Config::get('app.version', '1.0.2'));
+        return $version !== '' ? $version : '1.0.2';
     }
 
     private function buildHeroSlidesLinesFromRequest(array $data): string

@@ -2,9 +2,9 @@
 $admin = is_array($admin ?? null) ? $admin : [];
 $sessionInfo = is_array($sessionInfo ?? null) ? $sessionInfo : [];
 $flash = $flash ?? null;
-$blogVersion = trim((string) ($blogVersion ?? '1.0.1'));
+$blogVersion = trim((string) ($blogVersion ?? '1.0.2'));
 if ($blogVersion === '') {
-    $blogVersion = '1.0.1';
+    $blogVersion = '1.0.2';
 }
 $updateCheckUrlConfigured = (bool) ($updateCheckUrlConfigured ?? false);
 

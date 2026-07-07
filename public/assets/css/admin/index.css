@@ -21687,21 +21687,47 @@ html[data-theme='dark'] .admin-update-download-button {
 @media (max-width: 640px) {
     .admin-update-notes-modal {
         align-items: center;
-        padding: 8px;
+        padding: 10px 20px;
     }
 
     .admin-update-notes-panel {
-        width: min(100%, 360px) !important;
-        max-height: 82vh;
-        padding: 14px !important;
-        border-radius: 14px !important;
+        width: min(100%, 330px) !important;
+        max-height: 74vh;
+        padding: 12px !important;
+        border-radius: 12px !important;
+    }
+
+    .admin-update-notes-head {
+        margin-bottom: 8px !important;
     }
 
     .admin-update-notes-content {
-        max-height: calc(82vh - 154px) !important;
+        max-height: calc(74vh - 136px) !important;
+    }
+
+    .admin-update-notes-list li {
+        gap: 8px !important;
+        padding: 8px 0 !important;
+    }
+
+    .admin-update-notes-list p,
+    .admin-update-notes-empty {
+        font-size: 12px !important;
+        line-height: 1.6 !important;
+    }
+
+    .admin-update-remind-option {
+        margin-top: 10px !important;
     }
 
     .admin-update-notes-actions {
+        gap: 8px !important;
+        margin-top: 10px !important;
         grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    .admin-update-notes-actions .admin-btn {
+        min-height: 36px !important;
+        font-size: 12px !important;
     }
 }

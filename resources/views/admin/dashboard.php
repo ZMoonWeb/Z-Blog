@@ -24,7 +24,7 @@
     $server = $server ?? [];
 
     $adminName = (string) ($admin['username'] ?? '管理员');
-    $blogVersion = (string) ($blogVersion ?? '1.0.1');
+    $blogVersion = (string) ($blogVersion ?? '1.0.2');
     $updateCheckUrlConfigured = (bool) ($updateCheckUrlConfigured ?? false);
 
     $hour = (int) (new DateTimeImmutable('now', new DateTimeZone(date_default_timezone_get() ?: 'Asia/Shanghai')))->format('H');
