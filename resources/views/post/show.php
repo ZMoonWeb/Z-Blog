@@ -120,6 +120,7 @@ $hotScore = (int) round($viewCount * 1 + $likeCount * 1.2 + $commentCount * 1.5)
 
             <div class="pd-actions" id="article-actions">
                 <form method="post" action="/post/<?= urlencode($post['slug'] ?? '') ?>/like" class="pd-action-form">
+                    <?= \App\Core\Security\Csrf::field() ?>
                     <input type="hidden" name="redirect_to" value="/post/<?= urlencode($post['slug'] ?? '') ?>#article-actions">
                     <button type="submit" class="pd-action-button pd-like-btn <?= ($liked ?? false) ? 'is-liked' : '' ?>" data-post-slug="<?= htmlspecialchars($post['slug'] ?? '') ?>" aria-label="<?= ($liked ?? false) ? '取消点赞' : '点赞' ?>">
                         <svg viewBox="0 0 1024 1024" fill="none" stroke="currentColor" stroke-width="50" width="22" height="22" aria-hidden="true">
@@ -160,6 +161,7 @@ $hotScore = (int) round($viewCount * 1 + $likeCount * 1.2 + $commentCount * 1.5)
                     <?php endif; ?>
 
                     <form method="post" action="/post/<?= urlencode($post['slug'] ?? '') ?>/comment" class="pd-comment-form" data-comment-form>
+                        <?= \App\Core\Security\Csrf::field() ?>
                         <input type="hidden" name="browser_fingerprint" value="" data-browser-fingerprint-input>
                         <div class="pd-form-group">
                             <label for="content" class="pd-form-label">评论内容 <span class="pd-required">*</span></label>

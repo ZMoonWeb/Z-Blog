@@ -88,6 +88,7 @@
                                         <div class="admin-row-actions">
                                             <a class="admin-btn admin-btn-secondary admin-btn-sm" href="/admin/posts/<?= (int) $post['id'] ?>/edit">编辑</a>
                                             <form class="admin-inline-form" method="post" action="/admin/posts/<?= (int) $post['id'] ?>/delete" onsubmit="return confirm('确定要删除这篇文章吗？')">
+                                                <?= \App\Core\Security\Csrf::field() ?>
                                                 <button class="admin-btn admin-btn-danger admin-btn-sm" type="submit">删除</button>
                                             </form>
                                         </div>
@@ -132,6 +133,7 @@
                                         <div class="admin-post-mobile-action-buttons">
                                             <a class="admin-btn admin-btn-secondary admin-btn-sm" href="/admin/posts/<?= $postId ?>/edit">编辑</a>
                                             <form class="admin-inline-form" method="post" action="/admin/posts/<?= $postId ?>/delete" onsubmit="return confirm('确定要删除这篇文章吗？')">
+                                                <?= \App\Core\Security\Csrf::field() ?>
                                                 <button class="admin-btn admin-btn-danger admin-btn-sm" type="submit">删除</button>
                                             </form>
                                         </div>
@@ -146,6 +148,12 @@
             </section>
         </main>
     </div>
+    <script src="/assets/js/admin/modules/theme.js?v=<?= time() ?>"></script>
+    <script src="/assets/js/admin/modules/sidebar.js?v=<?= time() ?>"></script>
+    <script src="/assets/js/admin/modules/modal.js?v=<?= time() ?>"></script>
+    <script src="/assets/js/admin/modules/editor.js?v=<?= time() ?>"></script>
+    <script src="/assets/js/admin/modules/forms.js?v=<?= time() ?>"></script>
+    <script src="/assets/js/admin/modules/upload-preview.js?v=<?= time() ?>"></script>
     <script src="/assets/js/admin/index.js?v=<?= time() ?>"></script>
 </body>
 </html>

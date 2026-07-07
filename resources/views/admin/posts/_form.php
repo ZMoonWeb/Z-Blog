@@ -14,6 +14,7 @@ $tagValues = array_slice($tagValues, 0, 3);
 ?>
 
 <form class="admin-form-card admin-editor-form admin-writing-form" method="post" action="<?= htmlspecialchars($formAction) ?>">
+    <?= \App\Core\Security\Csrf::field() ?>
     <header class="admin-writing-topbar" aria-label="写作工具栏">
         <div class="admin-editor-toolbar admin-writing-toolbar" aria-label="编辑器工具栏">
             <button type="button" data-insert="heading1">H1</button>

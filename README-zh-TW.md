@@ -21,126 +21,134 @@
   <img alt="Repo size" src="https://img.shields.io/github/repo-size/ZMoonWeb/Z-Blog?style=flat-square&label=repo%20size&labelColor=475569&color=22d3ee">
 </p>
 
-## 简介
+## 簡介
 
-Z-Blog 是一个从零搭建的 PHP 博客系统，定位是轻量、现代、易部署。它包含前台阅读体验、后台内容管理、留言互动、公告管理、活动审计、站点个性化配置和版本更新检测，适合个人博客、作品记录、项目日志和小型内容站点。
+Z-Blog 是一個從零搭建的 PHP 部落格系統，定位是輕量、現代、易部署。它包含前台閱讀體驗、後台內容管理、留言互動、公告管理、活動稽核、站點個性化設定、日誌記錄和版本更新檢測，適合個人部落格、作品記錄、專案日誌和小型內容站點。
 
-项目不依赖大型框架，核心结构清晰，使用原生 PHP MVC 组织代码，并通过 Composer 管理必要依赖。
+專案不依賴大型框架，基於原生 PHP、Composer 和模組化目錄組織程式碼。核心能力放在 `app/Core`，業務能力拆分到 `app/Modules`，資料模型保留在 `app/Models`，視圖和元件放在 `resources/views`。
 
-## 界面预览
+## 介面預覽
 
-**加载动画**
+**載入動畫**
 
 <p align="center">
   <span style="display: inline-block; width: 48%; text-align: center; vertical-align: top;">
-    <img src="public/assets/img/loading-light.png" alt="加载动画浅色模式" width="100%"><br>
-    <sub>浅色模式</sub>
+    <img src="public/assets/img/loading-light.png" alt="載入動畫淺色模式" width="100%"><br>
+    <sub>淺色模式</sub>
   </span>
   <span style="display: inline-block; width: 48%; text-align: center; vertical-align: top;">
-    <img src="public/assets/img/loading-dark.png" alt="加载动画暗色模式" width="100%"><br>
+    <img src="public/assets/img/loading-dark.png" alt="載入動畫暗色模式" width="100%"><br>
     <sub>暗色模式</sub>
   </span>
 </p>
 
-**欢迎页**
+**歡迎頁**
 
 <p align="center">
   <span style="display: inline-block; width: 48%; text-align: center; vertical-align: top;">
-    <img src="public/assets/img/welcome-light.png" alt="欢迎页浅色模式" width="100%"><br>
-    <sub>浅色模式</sub>
+    <img src="public/assets/img/welcome-light.png" alt="歡迎頁淺色模式" width="100%"><br>
+    <sub>淺色模式</sub>
   </span>
   <span style="display: inline-block; width: 48%; text-align: center; vertical-align: top;">
-    <img src="public/assets/img/welcome-dark.png" alt="欢迎页暗色模式" width="100%"><br>
+    <img src="public/assets/img/welcome-dark.png" alt="歡迎頁暗色模式" width="100%"><br>
     <sub>暗色模式</sub>
   </span>
 </p>
 
-**首页**
+**首頁**
 
 <p align="center">
   <span style="display: inline-block; width: 48%; text-align: center; vertical-align: top;">
-    <img src="public/assets/img/home-light.png" alt="首页浅色模式" width="100%"><br>
-    <sub>浅色模式</sub>
+    <img src="public/assets/img/home-light.png" alt="首頁淺色模式" width="100%"><br>
+    <sub>淺色模式</sub>
   </span>
   <span style="display: inline-block; width: 48%; text-align: center; vertical-align: top;">
-    <img src="public/assets/img/home-dark.png" alt="首页暗色模式" width="100%"><br>
+    <img src="public/assets/img/home-dark.png" alt="首頁暗色模式" width="100%"><br>
     <sub>暗色模式</sub>
   </span>
 </p>
-<h2 style="margin-top: 24px; margin-bottom: 0; padding-bottom: 0;">赞助商</h2>
-<details style="margin-top: 0;"><summary><strong>想成为赞助商？点我了解</strong></summary>
-欢迎通过邮件联系：<a href="mailto:3635716439@qq.com">3635716439@qq.com</a>
+
+<h2 style="margin-top: 24px; margin-bottom: 0; padding-bottom: 0;">贊助商</h2>
+<details style="margin-top: 0;"><summary><strong>想成為贊助商？點我了解</strong></summary>
+歡迎透過郵件聯絡：<a href="mailto:3635716439@qq.com">3635716439@qq.com</a>
 </details>
 <br>
 <table>
   <tr>
-    <th align="left">图标</th>
-    <th align="left">名称</th>
-    <th align="left">简介</th>
-    <th align="left">跳转</th>
+    <th align="left">圖示</th>
+    <th align="left">名稱</th>
+    <th align="left">簡介</th>
+    <th align="left">跳轉</th>
   </tr>
   <tr>
-    <td><img src="public/assets/img/ZMoon.png" width="44" alt="筑梦科技"></td>
-    <td>筑梦科技</td>
-    <td>开发商</td>
-    <td><a href="https://qm.qq.com/q/DYI7jJPTDq">点我了解详情</a></td>
+    <td><img src="public/assets/img/ZMoon.png" width="44" alt="築夢科技"></td>
+    <td>築夢科技</td>
+    <td>開發商</td>
+    <td><a href="https://qm.qq.com/q/DYI7jJPTDq">點我了解詳情</a></td>
   </tr>
 </table>
 
 ## 功能特性
 
-- 文章发布、编辑、删除、封面图、分类管理。
-- 首页、热门、公告、留言板、关于页、个人主页和文章详情页。
-- Markdown 渲染支持，基于 `league/commonmark`。
-- 点赞、评论、留言等互动能力。
-- 后台仪表盘、文章管理、分类管理、公告管理、留言管理。
-- 管理员活动记录，后台关键操作会被记录。
-- 前台设置、后台设置和个人资料分区管理。
-- 图片上传、头像配置、站点 Logo、侧栏背景、个人主页背景等个性化配置。
-- 安装向导、环境检测、数据库连接检测。
-- 日志与缓存目录，便于部署后排查问题。
-- 后台自动检测 GitHub 新版本，并提示前往下载。
-- 明暗主题适配，内置 MiSans 字体资源。
+- 前台頁面：首頁、文章詳情、熱門排行、公告、留言板、關於頁和個人主頁。
+- 內容管理：文章發布、編輯、刪除、封面圖、標籤、分類和 Markdown/HTML 內容渲染。
+- 互動能力：文章瀏覽記錄、點讚、評論、留言發布、留言詳情和後台回覆。
+- 後台管理：儀表盤、文章、分類、公告、留言、互動記錄、活動記錄、前台設定、後台設定和個人資料。
+- 管理稽核：後台關鍵操作會寫入管理員活動記錄，並保留操作對象、狀態、詳情和變更摘要。
+- 個性化設定：站點 Logo、頂部頭像、側欄頭像、側欄背景、個人主頁背景、座右銘、複製按鈕、首頁輪播和關於頁內容。
+- 安全能力：CSRF 校驗、安全回應標頭、Session 設定、登入失敗鎖定、密碼策略、HTML 清洗和圖片上傳校驗。
+- 安裝向導：支援環境檢測、`.env` 設定檢測、資料庫連線檢測和安裝狀態寫入。
+- 日誌系統：支援每日 JSON 日誌、異常記錄、請求日誌和日誌保留天數設定。
+- 更新檢測：後台自動檢測遠端版本，發現新版本後展示更新提示並跳轉到 GitHub Release。
+- 主題體驗：前後台明暗主題適配，內建 MiSans 字體資源。
 
-## 技术栈
+## 技術棧
 
-| 类型 | 说明 |
+| 類型 | 說明 |
 | --- | --- |
-| 后端 | PHP 8.1+ |
-| 数据库 | MySQL / MariaDB |
-| 依赖管理 | Composer |
-| 配置加载 | `vlucas/phpdotenv` |
+| 後端 | PHP 8.1+ |
+| 資料庫 | MySQL / MariaDB |
+| 依賴管理 | Composer |
+| 架構 | 原生 PHP + Core + Modules + Models |
+| 路由 | 專案內建模組路由 |
+| 設定載入 | `vlucas/phpdotenv` |
 | Markdown | `league/commonmark` |
 | 前端 | 原生 HTML / CSS / JavaScript |
-| 字体 | MiSans |
+| 前端建置 | Tailwind CSS CLI，可選 |
+| 字體 | MiSans |
 
-## 环境要求
+## 環境需求
 
 - PHP `>= 8.1`
 - MySQL 或 MariaDB
 - Composer
-- PHP 扩展：`pdo`、`pdo_mysql`、`mbstring`
-- Web 服务器：Nginx、Apache、宝塔面板等均可
+- PHP 擴充：`pdo`、`pdo_mysql`、`mbstring`
+- 建議啟用 `fileinfo` 擴充，用於更準確的上傳 MIME 校驗
+- Web 伺服器：Nginx、Apache、寶塔面板等均可
 
-生产环境请将站点运行目录指向 `public/`。
+生產環境請將站點執行目錄指向 `public/`。
 
-## 快速开始
+## 快速開始
 
-下载最新版发布包：
+下載最新版發布包：
 
 ```text
 https://github.com/ZMoonWeb/Z-Blog/releases/latest
 ```
 
-将 ZIP 压缩包上传到服务器站点目录并解压。
+將 ZIP 壓縮包上傳到伺服器站點目錄並解壓。Release 包建議包含 `vendor/` 依賴目錄；如果你是從原始碼包或 Git 倉庫部署，請先在專案根目錄執行：
 
-配置站点域名，并将网站运行目录设置为：
+```bash
+composer install --no-dev --optimize-autoloader
+```
+
+設定站點網域，並將網站執行目錄設定為：
 
 ```text
 public
 ```
 
-Nginx 伪静态配置：
+Nginx 偽靜態設定：
 
 ```nginx
 location / {
@@ -148,104 +156,158 @@ location / {
 }
 ```
 
-创建配置文件：
+建立設定檔：
 
 ```bash
 cp .env.example .env
 ```
 
-编辑 `.env`，至少填写数据库、站点地址、邮件和时区相关配置。
+編輯 `.env`，至少填寫應用名稱、站點地址、資料庫、郵件、日誌和時區相關設定。`APP_VERSION` 用於後台更新檢測，請跟隨目前發布版本填寫。
 
-浏览器访问：
+瀏覽器訪問：
 
 ```text
 https://你的域名/install
 ```
 
-按照安装向导完成环境检测、数据库连接和管理员账号创建。
+按照安裝向導完成環境檢測、資料庫連線和管理員帳號建立。
 
-## 关键配置
+## 關鍵設定
 
-| 配置项 | 说明 |
+| 設定項 | 說明 |
 | --- | --- |
-| `APP_NAME` | 应用名称 |
-| `APP_VERSION` | 当前 Blog 版本号 |
-| `APP_ENV` | 运行环境 |
-| `APP_DEBUG` | 是否开启调试 |
-| `APP_URL` | 站点地址 |
-| `APP_TIMEZONE` | 默认时区 |
-| `APP_UPDATE_CHECK_URL` | 更新检测接口地址 |
-| `APP_UPDATE_RELEASE_URL` | 新版本跳转地址 |
-| `DB_HOST` | 数据库主机 |
-| `DB_DATABASE` | 数据库名称 |
-| `DB_USERNAME` | 数据库用户名 |
-| `DB_PASSWORD` | 数据库密码 |
-| `MAIL_HOST` | SMTP 服务器 |
-| `MAIL_USERNAME` | SMTP 用户名 |
-| `MAIL_PASSWORD` | SMTP 密码 |
-| `LOG_PATH` | 日志文件路径 |
-| `LOG_REQUESTS` | 是否记录请求日志 |
+| `APP_NAME` | 應用名稱 |
+| `APP_VERSION` | 目前 Blog 版本號 |
+| `APP_ENV` | 執行環境 |
+| `APP_DEBUG` | 是否開啟除錯 |
+| `APP_URL` | 站點地址 |
+| `APP_TIMEZONE` | 預設時區 |
+| `APP_UPDATE_CHECK_URL` | 更新檢測介面地址 |
+| `APP_UPDATE_RELEASE_URL` | 新版本跳轉地址 |
+| `APP_POSTS_PER_PAGE` | 首頁文章分頁數量 |
+| `DB_HOST` | 資料庫主機 |
+| `DB_PORT` | 資料庫連接埠 |
+| `DB_DATABASE` | 資料庫名稱 |
+| `DB_USERNAME` | 資料庫使用者名稱 |
+| `DB_PASSWORD` | 資料庫密碼 |
+| `DB_CHARSET` | 資料庫字元集 |
+| `MAIL_MAILER` | 郵件驅動 |
+| `MAIL_HOST` | SMTP 伺服器 |
+| `MAIL_PORT` | SMTP 連接埠 |
+| `MAIL_USERNAME` | SMTP 使用者名稱 |
+| `MAIL_PASSWORD` | SMTP 密碼 |
+| `MAIL_ENCRYPTION` | SMTP 加密方式 |
+| `MAIL_FROM_ADDRESS` | 寄件信箱 |
+| `MAIL_FROM_NAME` | 寄件人名稱 |
+| `LOG_CHANNEL` | 日誌通道 |
+| `LOG_LEVEL` | 日誌等級 |
+| `LOG_PATH` | 日誌檔案路徑 |
+| `LOG_MAX_FILES` | 日誌保留檔案數 |
+| `LOG_REQUESTS` | 是否記錄請求日誌 |
 
-实际部署时不要提交 `.env`，只提交 `.env.example` 作为模板。
+實際部署時不要提交 `.env`，只提交 `.env.example` 作為模板。
 
-## 目录结构
+## 目錄結構
 
 ```text
 Z-Blog/
-├── app/                 # 应用核心、控制器、模型
-├── config/              # 应用、数据库、日志、邮件配置
-├── public/              # Web 根目录
-│   ├── assets/          # 静态资源
-│   ├── uploads/         # 用户上传目录
-│   └── index.php        # 入口文件
-├── resources/views/     # 页面模板
-├── storage/             # 缓存、日志等运行时文件
-├── vendor/              # Composer 依赖
-├── .env.example         # 环境变量模板
-├── composer.json        # Composer 配置
-├── composer.lock        # 依赖锁定文件
-└── install.php          # 安装向导
+├── app/
+│   ├── Core/                 # 應用核心：設定、路由、HTTP、日誌、安全、資料庫、視圖
+│   ├── Models/               # 資料模型
+│   └── Modules/              # 業務模組：文章、分類、公告、留言、設定、個人資料等
+├── config/                   # 應用、資料庫、郵件、日誌、安全、會話、上傳、更新和模組設定
+├── database/
+│   └── migrations/           # 資料庫遷移檔案
+├── public/                   # Web 根目錄
+│   ├── assets/               # CSS、JavaScript、圖片、字體等靜態資源
+│   ├── uploads/              # 使用者上傳目錄
+│   └── index.php             # 入口檔案
+├── resources/
+│   ├── assets/               # 前端原始檔
+│   └── views/                # 頁面模板和元件
+├── routes/                   # 全域路由入口，主要業務路由由模組註冊
+├── storage/                  # 快取、日誌等執行時檔案
+├── vendor/                   # Composer 依賴
+├── .env.example              # 環境變數模板
+├── composer.json             # Composer 設定
+├── composer.lock             # 依賴鎖定檔案
+├── package.json              # 前端建置腳本
+└── install.php               # 安裝向導
 ```
 
-## 部署说明
+## 模組結構
 
-1. 上传项目到服务器。
-2. 执行 `composer install --no-dev --optimize-autoloader`。
-3. 复制 `.env.example` 为 `.env` 并填写配置。
-4. 将站点运行目录设置为 `public/`。
-5. 确保 `storage/` 和 `public/uploads/` 可写。
-6. 访问 `/install` 完成安装。
+業務程式碼集中在 `app/Modules`。一個完整模組通常包含：
 
-如果使用 Apache，项目已包含 `public/.htaccess`。如果使用 Nginx，请将请求重写到 `public/index.php`。
+```text
+ModuleName/
+├── Controllers/        # 請求入口
+├── Services/           # 業務邏輯
+├── Repositories/       # 資料存取封裝
+├── Requests/           # 表單校驗
+└── routes.php          # 模組路由
+```
 
-## 更新机制
+不是每個模組都必須包含所有目錄，小模組可以只保留 `routes.php` 和 `Services`。模組是否啟用由 `config/modules.php` 控制。
 
-后台首页会自动检查当前版本。检测到新版本时，管理员可以在提示弹窗中前往 GitHub 下载新版。
+## 部署說明
 
-更新检测相关字段：
+1. 上傳專案到伺服器。
+2. 如果發布包沒有包含 `vendor/`，執行 `composer install --no-dev --optimize-autoloader`。
+3. 複製 `.env.example` 為 `.env` 並填寫設定。
+4. 將站點執行目錄設定為 `public/`。
+5. 設定偽靜態，將請求重寫到 `public/index.php`。
+6. 確保 `storage/` 和 `public/uploads/` 可寫。
+7. 訪問 `/install` 完成安裝。
 
-- 当前版本读取 `.env` 中的 `APP_VERSION`。
-- 检测接口读取 `.env` 中的 `APP_UPDATE_CHECK_URL`。
-- 跳转地址优先使用远端返回的 `release_url`，也可以通过 `APP_UPDATE_RELEASE_URL` 配置默认地址。
+Nginx 可使用快速開始中的 `try_files` 設定。Apache 環境請自行新增等效重寫規則，將不存在的檔案請求轉發到 `public/index.php`。
 
-## 安全建议
+## 前端資源
 
-- 不要提交 `.env`、日志文件、缓存文件和真实上传文件。
-- 生产环境关闭 `APP_DEBUG`。
-- 数据库账号建议使用最小权限。
-- 后台账号请使用强密码。
-- 定期备份数据库和 `public/uploads/`。
-- 发布新版本前确认 `.env.example` 保持最新。
+專案預設提交編譯後的 CSS 和 JavaScript，普通部署不需要建置前端資源。如果修改 `resources/assets/css/tailwind.css`，可以使用：
 
-## 贡献
+```bash
+npm install
+npm run build:tailwind
+```
 
-欢迎提交 Issue、建议和 Pull Request。提交代码前建议先确认：
+開發時監聽 Tailwind：
 
-- 代码风格与项目现有结构保持一致。
-- 配置项同步更新 `.env.example`。
-- 涉及数据库或安装流程的改动需要同步安装向导。
-- 涉及后台操作的改动需要考虑活动记录。
+```bash
+npm run watch:tailwind
+```
 
-## 许可证
+## 更新機制
 
-Z-Blog 基于 [MIT License](LICENSE) 开源。
+後台首頁會自動檢查目前版本。檢測到新版本時，管理員可以在提示彈窗中查看提示，並前往 GitHub Release 下載新版。
+
+更新檢測相關欄位：
+
+- 目前版本讀取 `.env` 中的 `APP_VERSION`。
+- 檢測介面讀取 `.env` 中的 `APP_UPDATE_CHECK_URL`。
+- 跳轉地址優先使用遠端返回的 `release_url`，也可以透過 `APP_UPDATE_RELEASE_URL` 設定預設地址。
+- 檢測介面會傳送 `action=check_update`、目前版本和請求時間。
+- 發現新版本後會再次傳送 `action=get_update_notes` 取得更新說明。
+- 專案不會自動覆蓋伺服器檔案，更新包下載和覆蓋由管理員自行處理。
+
+## 安全建議
+
+- 不要提交 `.env`、日誌檔案、快取檔案和真實上傳檔案。
+- 生產環境關閉 `APP_DEBUG`。
+- 資料庫帳號建議使用最小權限。
+- 後台帳號請使用強密碼。
+- 定期備份資料庫和 `public/uploads/`。
+- 發布新版本前確認 `.env.example` 保持最新。
+
+## 貢獻
+
+歡迎提交 Issue、建議和 Pull Request。提交程式碼前建議先確認：
+
+- 程式碼風格與專案現有結構保持一致。
+- 設定項同步更新 `.env.example`。
+- 涉及資料庫或安裝流程的改動需要同步安裝向導。
+- 涉及後台操作的改動需要考慮活動記錄。
+
+## 授權
+
+Z-Blog 基於 [MIT License](LICENSE) 開源。

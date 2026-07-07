@@ -21,7 +21,16 @@ $footerPowered = $setting('footer_powered', 'Powered by PHP · Theme inspired by
 
 $publicPath = dirname(__DIR__, 3) . '/public';
 $frontCssVersion = @filemtime($publicPath . '/assets/css/front/index.css') ?: time();
+$frontTailwindCssVersion = @filemtime($publicPath . '/assets/css/front/tailwind.css') ?: time();
 $frontJsVersion = @filemtime($publicPath . '/assets/js/front/index.js') ?: time();
+$frontThemeJsVersion = @filemtime($publicPath . '/assets/js/front/modules/theme.js') ?: time();
+$frontToastJsVersion = @filemtime($publicPath . '/assets/js/front/modules/toast.js') ?: time();
+$frontMobileMenuJsVersion = @filemtime($publicPath . '/assets/js/front/modules/mobile-menu.js') ?: time();
+$frontCarouselJsVersion = @filemtime($publicPath . '/assets/js/front/modules/carousel.js') ?: time();
+$frontSearchJsVersion = @filemtime($publicPath . '/assets/js/front/modules/search.js') ?: time();
+$frontLikeJsVersion = @filemtime($publicPath . '/assets/js/front/modules/like.js') ?: time();
+$frontCommentJsVersion = @filemtime($publicPath . '/assets/js/front/modules/comment.js') ?: time();
+$frontGuestbookJsVersion = @filemtime($publicPath . '/assets/js/front/modules/guestbook.js') ?: time();
 $loadingChars = preg_split('//u', $siteTitle, -1, PREG_SPLIT_NO_EMPTY) ?: [];
 ?>
 
@@ -30,6 +39,7 @@ $loadingChars = preg_split('//u', $siteTitle, -1, PREG_SPLIT_NO_EMPTY) ?: [];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="<?= htmlspecialchars(\App\Core\Security\Csrf::token(), ENT_QUOTES, 'UTF-8') ?>">
     <meta name="color-scheme" content="light dark">
     <script>
         (() => {
@@ -74,8 +84,7 @@ $loadingChars = preg_split('//u', $siteTitle, -1, PREG_SPLIT_NO_EMPTY) ?: [];
     <!-- 项目字体 MiSans：先 preload，避免首屏闪现系统字体 -->
     <link rel="preload" href="/assets/font/MiSans/woff2/MiSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/font/MiSans/woff2/MiSans-Bold.woff2" as="font" type="font/woff2" crossorigin>
-    <!-- Tailwind CSS CDN v3：仅用于辅助类，改为 async 避免阻塞首屏绘制（核心视觉在 index.css） -->
-    <script src="https://cdn.tailwindcss.com" async></script>
+    <link rel="stylesheet" href="/assets/css/front/tailwind.css?v=<?= $frontTailwindCssVersion ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="/assets/css/front/index.css?v=<?= $frontCssVersion ?>">
 </head>
@@ -211,6 +220,14 @@ $loadingChars = preg_split('//u', $siteTitle, -1, PREG_SPLIT_NO_EMPTY) ?: [];
         </div>
     </footer>
 
+    <script src="/assets/js/front/modules/theme.js?v=<?= $frontThemeJsVersion ?>" defer></script>
+    <script src="/assets/js/front/modules/toast.js?v=<?= $frontToastJsVersion ?>" defer></script>
+    <script src="/assets/js/front/modules/mobile-menu.js?v=<?= $frontMobileMenuJsVersion ?>" defer></script>
+    <script src="/assets/js/front/modules/carousel.js?v=<?= $frontCarouselJsVersion ?>" defer></script>
+    <script src="/assets/js/front/modules/search.js?v=<?= $frontSearchJsVersion ?>" defer></script>
     <script src="/assets/js/front/index.js?v=<?= $frontJsVersion ?>" defer></script>
+    <script src="/assets/js/front/modules/like.js?v=<?= $frontLikeJsVersion ?>" defer></script>
+    <script src="/assets/js/front/modules/comment.js?v=<?= $frontCommentJsVersion ?>" defer></script>
+    <script src="/assets/js/front/modules/guestbook.js?v=<?= $frontGuestbookJsVersion ?>" defer></script>
 </body>
 </html>

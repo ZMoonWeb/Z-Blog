@@ -97,6 +97,7 @@ $rankClass = static function (int $index): string {
                                     <?= $viewCount ?>
                                 </span>
                                 <form class="inline-like-form" method="post" action="<?= htmlspecialchars($postUrl) ?>/like">
+                                    <?= \App\Core\Security\Csrf::field() ?>
                                     <input type="hidden" name="redirect_to" value="<?= htmlspecialchars((string) ($_SERVER['REQUEST_URI'] ?? '/hot')) ?>">
                                     <button class="post-stat post-like inline-like-button <?= $isLiked ? 'is-liked' : '' ?>" type="submit" data-like-toggle data-like-post-id="<?= $postId ?>" aria-label="<?= $isLiked ? '取消点赞' : '点赞' ?>：<?= htmlspecialchars($postTitle) ?>" aria-pressed="<?= $isLiked ? 'true' : 'false' ?>">
                                         <span class="post-like-heart" aria-hidden="true">♥</span>

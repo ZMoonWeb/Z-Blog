@@ -30,6 +30,12 @@
             ?>
         </main>
     </div>
+    <script src="/assets/js/admin/modules/theme.js?v=<?= time() ?>"></script>
+    <script src="/assets/js/admin/modules/sidebar.js?v=<?= time() ?>"></script>
+    <script src="/assets/js/admin/modules/modal.js?v=<?= time() ?>"></script>
+    <script src="/assets/js/admin/modules/editor.js?v=<?= time() ?>"></script>
+    <script src="/assets/js/admin/modules/forms.js?v=<?= time() ?>"></script>
+    <script src="/assets/js/admin/modules/upload-preview.js?v=<?= time() ?>"></script>
     <script src="/assets/js/admin/index.js?v=<?= time() ?>"></script>
 </body>
 </html>

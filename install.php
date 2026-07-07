@@ -9,6 +9,8 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
 }
 
 use App\Core\Config;
+use App\Core\Security\Csrf;
+use App\Core\Security\PasswordPolicy;
 use App\Models\Admin;
 use App\Models\AdminActivityLog;
 use App\Models\AdminLoginAttempt;
@@ -19,6 +21,7 @@ use App\Models\Like;
 use App\Models\Post;
 use App\Models\PostInteractionLog;
 use App\Models\SiteContent;
+use App\Modules\Install\InstallLock;
 
 $alreadyInstalled = isAppInstalled();
 
@@ -278,49 +281,55 @@ if (!$alreadyInstalled && $_SERVER['REQUEST_METHOD'] === 'POST' && $allOk && ($_
     $confirm  = $_POST['confirm'] ?? '';
     $error = '';
 
-    if ($username === '' || $password === '') {
+    if (!Csrf::validate()) {
+        $error = '页面已过期，请刷新后重试';
+    } elseif ($username === '' || $password === '') {
         $error = '用户名和密码不能为空';
     } elseif ($password !== $confirm) {
         $error = '两次输入的密码不一致';
-    } elseif (strlen($password) < 6) {
-        $error = '密码长度不能少于 6 位';
     } else {
-        try {
-            Config::load(__DIR__);
-            $dbName = Config::get('database.database');
+        $passwordErrors = PasswordPolicy::validate($password);
+        if ($passwordErrors !== []) {
+            $error = $passwordErrors[0];
+        } else {
+            try {
+                Config::load(__DIR__);
+                $dbName = Config::get('database.database');
 
-            $pdo = new PDO(
-                "mysql:host=" . Config::get('database.host') . ";port=" . Config::get('database.port') . ";charset=utf8mb4",
-                Config::get('database.username'),
-                Config::get('database.password'),
-                [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
-            );
-            $pdo->exec("USE `{$dbName}`");
+                $pdo = new PDO(
+                    "mysql:host=" . Config::get('database.host') . ";port=" . Config::get('database.port') . ";charset=utf8mb4",
+                    Config::get('database.username'),
+                    Config::get('database.password'),
+                    [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
+                );
+                $pdo->exec("USE `{$dbName}`");
 
-            Admin::createTable();
-            Category::createTable();
-            Post::createTable();
-            Comment::createTable();
-            Like::createTable();
-            PostInteractionLog::createTable();
-            AdminLoginAttempt::createTable();
-            AdminActivityLog::createTable();
-            GuestbookMessage::createTable();
-            SiteContent::seedDefaults();
+                Admin::createTable();
+                Category::createTable();
+                Post::createTable();
+                Comment::createTable();
+                Like::createTable();
+                PostInteractionLog::createTable();
+                AdminLoginAttempt::createTable();
+                AdminActivityLog::createTable();
+                GuestbookMessage::createTable();
+                SiteContent::seedDefaults();
 
-            $stmt = $pdo->query("SELECT COUNT(*) FROM admin");
-            if ($stmt->fetchColumn() == 0) {
-                Admin::create($username, $password);
+                $stmt = $pdo->query("SELECT COUNT(*) FROM admin");
+                if ($stmt->fetchColumn() == 0) {
+                    Admin::create($username, $password);
+                }
+
+
+                markAppInstalled($pdo);
+                (new InstallLock(__DIR__))->write();
+                $_SESSION['install_completed'] = true;
+
+                header('Location: /install');
+                exit;
+            } catch (Throwable $e) {
+                $error = '安装失败: ' . $e->getMessage();
             }
-
-
-            markAppInstalled($pdo);
-            $_SESSION['install_completed'] = true;
-
-            header('Location: /install');
-            exit;
-        } catch (Throwable $e) {
-            $error = '安装失败: ' . $e->getMessage();
         }
     }
 }
@@ -469,6 +478,7 @@ if ($alreadyInstalled && $allOk) {
 
                 <?php if ($allOk): ?>
                     <form method="post">
+                        <?= \App\Core\Security\Csrf::field() ?>
                         <input type="hidden" name="action" value="next">
                         <button type="submit" class="btn btn-primary">
                             <span>继续</span>
@@ -513,6 +523,7 @@ if ($alreadyInstalled && $allOk) {
                 <?php endif; ?>
 
                 <form method="post" class="fade-in" style="animation-delay: 0.1s" onsubmit="return validateInstallerForm()">
+                    <?= \App\Core\Security\Csrf::field() ?>
                     <div class="form-group">
                         <label class="form-label" for="username">用户名</label>
                         <input class="form-input" type="text" id="username" name="username" placeholder="输入管理员用户名" autocomplete="username" value="<?= htmlspecialchars($_POST['username'] ?? '') ?>">

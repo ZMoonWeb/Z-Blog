@@ -150,6 +150,7 @@ $copyButtonClass = static function (string $label): string {
             <?php endif; ?>
 
             <form class="admin-profile-form" method="post" action="/admin/profile" enctype="multipart/form-data">
+                <?= \App\Core\Security\Csrf::field() ?>
                 <section class="admin-profile-clean" aria-label="个人资料表单" data-profile-panel-root>
                     <div class="profile-clean-editor">
                         <div class="profile-clean-tabs" role="tablist" aria-label="个人资料分组">
@@ -255,6 +256,12 @@ $copyButtonClass = static function (string $label): string {
         </main>
     </div>
 
+    <script src="/assets/js/admin/modules/theme.js?v=<?= time() ?>"></script>
+    <script src="/assets/js/admin/modules/sidebar.js?v=<?= time() ?>"></script>
+    <script src="/assets/js/admin/modules/modal.js?v=<?= time() ?>"></script>
+    <script src="/assets/js/admin/modules/editor.js?v=<?= time() ?>"></script>
+    <script src="/assets/js/admin/modules/forms.js?v=<?= time() ?>"></script>
+    <script src="/assets/js/admin/modules/upload-preview.js?v=<?= time() ?>"></script>
     <script src="/assets/js/admin/index.js?v=<?= time() ?>"></script>
 </body>
 </html>

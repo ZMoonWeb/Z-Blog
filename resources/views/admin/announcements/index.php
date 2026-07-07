@@ -100,6 +100,7 @@ $announcementSummary = static function (array $announcement): string {
                                             <div class="admin-row-actions">
                                                 <a class="admin-btn admin-btn-secondary admin-btn-sm" href="/admin/announcements/<?= (int) $announcement['id'] ?>/edit">编辑</a>
                                                 <form class="admin-inline-form" method="post" action="/admin/announcements/<?= (int) $announcement['id'] ?>/delete" data-announcement-delete-form data-announcement-delete-name="公告 #<?= (int) $announcement['id'] ?>">
+                                                    <?= \App\Core\Security\Csrf::field() ?>
                                                     <button class="admin-btn admin-btn-danger admin-btn-sm" type="submit">删除</button>
                                                 </form>
                                             </div>
@@ -141,6 +142,7 @@ $announcementSummary = static function (array $announcement): string {
                                 <div class="admin-announcement-mobile-actions">
                                     <a class="admin-btn admin-btn-secondary admin-btn-sm" href="/admin/announcements/<?= $announcementId ?>/edit">编辑</a>
                                     <form class="admin-inline-form" method="post" action="/admin/announcements/<?= $announcementId ?>/delete" data-announcement-delete-form data-announcement-delete-name="公告 #<?= $announcementId ?>">
+                                        <?= \App\Core\Security\Csrf::field() ?>
                                         <button class="admin-btn admin-btn-danger admin-btn-sm" type="submit">删除</button>
                                     </form>
                                 </div>
@@ -173,6 +175,12 @@ $announcementSummary = static function (array $announcement): string {
         </section>
     </div>
 
+    <script src="/assets/js/admin/modules/theme.js?v=<?= time() ?>"></script>
+    <script src="/assets/js/admin/modules/sidebar.js?v=<?= time() ?>"></script>
+    <script src="/assets/js/admin/modules/modal.js?v=<?= time() ?>"></script>
+    <script src="/assets/js/admin/modules/editor.js?v=<?= time() ?>"></script>
+    <script src="/assets/js/admin/modules/forms.js?v=<?= time() ?>"></script>
+    <script src="/assets/js/admin/modules/upload-preview.js?v=<?= time() ?>"></script>
     <script src="/assets/js/admin/index.js?v=<?= time() ?>"></script>
 </body>
 </html>

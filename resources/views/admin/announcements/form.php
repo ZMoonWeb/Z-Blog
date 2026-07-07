@@ -53,6 +53,7 @@ if (!array_key_exists($announcementLevel, $announcementLevels)) {
             <?php endif; ?>
 
             <form class="admin-form-card admin-editor-form admin-announcement-form" method="post" action="<?= htmlspecialchars($action) ?>">
+                <?= \App\Core\Security\Csrf::field() ?>
                 <div class="admin-form-grid admin-editor-grid admin-announcement-grid">
                     <div class="admin-form-panel admin-announcement-content">
                         <h2 class="admin-section-title">公告内容</h2>
@@ -103,6 +104,12 @@ if (!array_key_exists($announcementLevel, $announcementLevels)) {
         </main>
     </div>
 
+    <script src="/assets/js/admin/modules/theme.js?v=<?= time() ?>"></script>
+    <script src="/assets/js/admin/modules/sidebar.js?v=<?= time() ?>"></script>
+    <script src="/assets/js/admin/modules/modal.js?v=<?= time() ?>"></script>
+    <script src="/assets/js/admin/modules/editor.js?v=<?= time() ?>"></script>
+    <script src="/assets/js/admin/modules/forms.js?v=<?= time() ?>"></script>
+    <script src="/assets/js/admin/modules/upload-preview.js?v=<?= time() ?>"></script>
     <script src="/assets/js/admin/index.js?v=<?= time() ?>"></script>
 </body>
 </html>

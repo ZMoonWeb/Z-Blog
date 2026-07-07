@@ -1,4 +1,5 @@
 .env
+node_modules/
 
 /storage/logs/*
 !/storage/logs/.gitignore
@@ -12,3 +13,5 @@
 *.log
 Thumbs.db
 .DS_Store
+plan.md
+*.zip

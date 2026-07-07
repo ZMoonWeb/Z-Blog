@@ -243,6 +243,7 @@ $messageSummary = static function (array $message): string {
                             </section>
 
                             <form class="admin-reply-form admin-guestbook-reply-form" method="post" action="/admin/guestbook/<?= $messageId ?>/reply">
+                                <?= \App\Core\Security\Csrf::field() ?>
                                 <label class="admin-reply-label" for="<?= htmlspecialchars($replyTextareaId) ?>">管理员回复</label>
                                 <textarea
                                     id="<?= htmlspecialchars($replyTextareaId) ?>"
@@ -263,12 +264,14 @@ $messageSummary = static function (array $message): string {
                         <div class="admin-form-actions admin-detail-actions admin-guestbook-actions">
                             <?php if ($isDeleted): ?>
                                 <form method="post" action="/admin/guestbook/<?= $messageId ?>/restore">
+                                    <?= \App\Core\Security\Csrf::field() ?>
                                     <button class="admin-btn" type="submit">恢复留言</button>
                                 </form>
                             <?php endif; ?>
 
                             <?php if (!$isDeleted && $status !== 1): ?>
                                 <form method="post" action="/admin/guestbook/<?= $messageId ?>/approve">
+                                    <?= \App\Core\Security\Csrf::field() ?>
                                     <button class="admin-btn" type="submit">显示留言</button>
                                 </form>
                             <?php endif; ?>
@@ -276,12 +279,14 @@ $messageSummary = static function (array $message): string {
                             <?php if (!$isDeleted && $status !== 2): ?>
                                 <button class="admin-btn admin-btn-secondary" type="button" data-admin-modal-close>取消</button>
                                 <form method="post" action="/admin/guestbook/<?= $messageId ?>/hide" data-guestbook-confirm-form data-guestbook-confirm-name="隐藏留言" data-guestbook-confirm-desc="隐藏后，该留言将不在前台显示，可随时恢复。" data-guestbook-confirm-variant="warning">
+                                    <?= \App\Core\Security\Csrf::field() ?>
                                     <button class="admin-btn admin-btn-warning" type="submit">隐藏留言</button>
                                 </form>
                             <?php endif; ?>
 
                             <?php if (!$isDeleted): ?>
                                 <form method="post" action="/admin/guestbook/<?= $messageId ?>/delete" data-guestbook-confirm-form data-guestbook-confirm-name="删除留言" data-guestbook-confirm-desc="删除后该留言将被移除，无法恢复。" data-guestbook-confirm-variant="danger">
+                                    <?= \App\Core\Security\Csrf::field() ?>
                                     <button class="admin-btn admin-btn-danger" type="submit">删除留言</button>
                                 </form>
                             <?php endif; ?>
@@ -311,6 +316,12 @@ $messageSummary = static function (array $message): string {
         </section>
     </div>
 
+    <script src="/assets/js/admin/modules/theme.js?v=<?= time() ?>"></script>
+    <script src="/assets/js/admin/modules/sidebar.js?v=<?= time() ?>"></script>
+    <script src="/assets/js/admin/modules/modal.js?v=<?= time() ?>"></script>
+    <script src="/assets/js/admin/modules/editor.js?v=<?= time() ?>"></script>
+    <script src="/assets/js/admin/modules/forms.js?v=<?= time() ?>"></script>
+    <script src="/assets/js/admin/modules/upload-preview.js?v=<?= time() ?>"></script>
     <script src="/assets/js/admin/index.js?v=<?= time() ?>"></script>
 </body>
 </html>

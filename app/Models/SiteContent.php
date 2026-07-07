@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Models;
 
 use App\Core\Database;
+use App\Core\Security\HtmlSanitizer;
 use League\CommonMark\CommonMarkConverter;
 
 class SiteContent
@@ -975,40 +976,7 @@ class SiteContent
 
     private static function sanitizeHtml(string $html): string
     {
-        $allowedTags = '<p><br><strong><b><em><i><u><s><a><ul><ol><li><blockquote><pre><code><h1><h2><h3><h4><h5><h6><hr><span>';
-        $html = strip_tags($html, $allowedTags);
-
-        $html = preg_replace_callback('/<a\b[^>]*>/i', static function (array $matches): string {
-            $tag = $matches[0];
-            if (!preg_match('/\shref=(["\'])(.*?)\1/i', $tag, $hrefMatch)) {
-                return '<a>';
-            }
-
-            $href = trim(html_entity_decode($hrefMatch[2], ENT_QUOTES, 'UTF-8'));
-            if (!preg_match('#^(https?:)?//#i', $href) && !str_starts_with($href, '/')) {
-                return '<a>';
-            }
-
-            return '<a href="' . htmlspecialchars($href, ENT_QUOTES, 'UTF-8') . '" target="_blank" rel="nofollow noopener noreferrer">';
-        }, $html) ?? '';
-
-        $html = preg_replace('/<(p|br|strong|b|em|i|u|s|ul|ol|li|blockquote|pre|code|h[1-6]|hr)\b[^>]*>/i', '<$1>', $html) ?? '';
-
-        $html = preg_replace_callback('/<span\b[^>]*>/i', static function (array $matches): string {
-            $tag = $matches[0];
-            if (!preg_match('/\sstyle=(["\'])(.*?)\1/i', $tag, $styleMatch)) {
-                return '<span>';
-            }
-
-            $style = trim(html_entity_decode($styleMatch[2], ENT_QUOTES, 'UTF-8'));
-            if (!preg_match('/font-size\s*:\s*(1[2-9]|[2-4][0-9])px\s*;?/i', $style, $fontMatch)) {
-                return '<span>';
-            }
-
-            return '<span style="font-size: ' . (int) $fontMatch[1] . 'px;">';
-        }, $html) ?? '';
-
-        return $html;
+        return HtmlSanitizer::sanitizeSiteContent($html);
     }
 
     private static function now(): string

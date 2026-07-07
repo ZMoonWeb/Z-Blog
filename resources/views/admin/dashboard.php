@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="<?= htmlspecialchars(\App\Core\Security\Csrf::token(), ENT_QUOTES, 'UTF-8') ?>">
     <meta name="color-scheme" content="light dark">
     <title>后台管理 - Z-Blog</title>
     <link rel="icon" href="/assets/img/ZMoon.png" type="image/png">
@@ -23,7 +24,7 @@
     $server = $server ?? [];
 
     $adminName = (string) ($admin['username'] ?? '管理员');
-    $blogVersion = (string) ($blogVersion ?? '1.0.0');
+    $blogVersion = (string) ($blogVersion ?? '1.0.1');
     $updateCheckUrlConfigured = (bool) ($updateCheckUrlConfigured ?? false);
 
     $hour = (int) (new DateTimeImmutable('now', new DateTimeZone(date_default_timezone_get() ?: 'Asia/Shanghai')))->format('H');
@@ -119,13 +120,15 @@
         <script>
         window.__zblogAdminUpdateCheckEarly = window.__zblogAdminUpdateCheckEarly || (function () {
             try {
+                var csrfMeta = document.querySelector('meta[name="csrf-token"]');
+                var csrfToken = csrfMeta ? String(csrfMeta.getAttribute('content') || '') : '';
                 return fetch('/admin/api/check-update', {
                     method: 'POST',
                     credentials: 'same-origin',
-                    headers: {
+                    headers: Object.assign({
                         Accept: 'application/json',
                         'X-Requested-With': 'XMLHttpRequest'
-                    }
+                    }, csrfToken !== '' ? { 'X-CSRF-Token': csrfToken } : {})
                 }).then(function (response) {
                     return response.text().then(function (text) {
                         var payload = null;
@@ -321,6 +324,14 @@
             </div>
         </section>
     </div>
+    <script src="/assets/js/admin/modules/theme.js?v=<?= time() ?>"></script>
+    <script src="/assets/js/admin/modules/sidebar.js?v=<?= time() ?>"></script>
+    <script src="/assets/js/admin/modules/modal.js?v=<?= time() ?>"></script>
+    <script src="/assets/js/admin/modules/editor.js?v=<?= time() ?>"></script>
+    <script src="/assets/js/admin/modules/forms.js?v=<?= time() ?>"></script>
+    <script src="/assets/js/admin/modules/upload-preview.js?v=<?= time() ?>"></script>
+    <script src="/assets/js/admin/modules/update-check.js?v=<?= time() ?>"></script>
     <script src="/assets/js/admin/index.js?v=<?= time() ?>"></script>
+    <script src="/assets/js/admin/modules/dashboard-metrics.js?v=<?= time() ?>"></script>
 </body>
 </html>

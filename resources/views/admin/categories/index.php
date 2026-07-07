@@ -80,6 +80,7 @@
                                                 data-category-description="<?= htmlspecialchars((string) ($item['description'] ?? ''), ENT_QUOTES) ?>"
                                             >编辑</a>
                                             <form class="admin-inline-form" method="post" action="/admin/categories/<?= (int) $item['id'] ?>/delete" data-category-delete-form data-category-delete-name="<?= htmlspecialchars((string) ($item['name'] ?? ''), ENT_QUOTES) ?>">
+                                                <?= \App\Core\Security\Csrf::field() ?>
                                                 <button class="admin-btn admin-btn-danger admin-btn-sm" type="submit">删除</button>
                                             </form>
                                         </div>
@@ -121,6 +122,7 @@
                                         data-category-description="<?= htmlspecialchars((string) ($item['description'] ?? ''), ENT_QUOTES) ?>"
                                     >编辑</a>
                                     <form class="admin-inline-form" method="post" action="/admin/categories/<?= $categoryId ?>/delete" data-category-delete-form data-category-delete-name="<?= htmlspecialchars((string) ($item['name'] ?? ''), ENT_QUOTES) ?>">
+                                        <?= \App\Core\Security\Csrf::field() ?>
                                         <button class="admin-btn admin-btn-danger admin-btn-sm" type="submit">删除</button>
                                     </form>
                                 </div>
@@ -169,6 +171,7 @@
                     </div>
 
                     <form method="post" action="<?= $isEdit ? '/admin/categories/' . (int) $category['id'] . '/edit' : '/admin/categories/create' ?>" data-category-form>
+                        <?= \App\Core\Security\Csrf::field() ?>
                         <div class="admin-form-group">
                             <label class="admin-form-label" for="name">分类名称</label>
                             <input class="admin-input" type="text" id="name" name="name" value="<?= htmlspecialchars($category['name'] ?? '') ?>" placeholder="例如：技术笔记" data-category-name-input>
@@ -194,6 +197,12 @@
             </div>
         </main>
     </div>
+    <script src="/assets/js/admin/modules/theme.js?v=<?= time() ?>"></script>
+    <script src="/assets/js/admin/modules/sidebar.js?v=<?= time() ?>"></script>
+    <script src="/assets/js/admin/modules/modal.js?v=<?= time() ?>"></script>
+    <script src="/assets/js/admin/modules/editor.js?v=<?= time() ?>"></script>
+    <script src="/assets/js/admin/modules/forms.js?v=<?= time() ?>"></script>
+    <script src="/assets/js/admin/modules/upload-preview.js?v=<?= time() ?>"></script>
     <script src="/assets/js/admin/index.js?v=<?= time() ?>"></script>
 </body>
 </html>

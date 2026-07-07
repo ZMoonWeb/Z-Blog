@@ -6,8 +6,11 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 use App\Core\App;
 use App\Core\Config;
+use App\Core\Http\Request;
 
-Config::load(dirname(__DIR__));
+$basePath = dirname(__DIR__);
+Config::load($basePath);
 
-$app = new App();
-$app->run();
+$request = Request::capture();
+$app = new App($basePath);
+$app->handle($request)->send();

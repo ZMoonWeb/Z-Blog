@@ -16,7 +16,14 @@ $publicPath = dirname(__DIR__, 3) . '/public';
 $frontCssVersion = @filemtime($publicPath . '/assets/css/front/index.css') ?: time();
 $adminCssVersion = @filemtime($publicPath . '/assets/css/admin/index.css') ?: time();
 $frontJsVersion = @filemtime($publicPath . '/assets/js/front/index.js') ?: time();
+$frontThemeJsVersion = @filemtime($publicPath . '/assets/js/front/modules/theme.js') ?: time();
 $adminJsVersion = @filemtime($publicPath . '/assets/js/admin/index.js') ?: time();
+$adminThemeJsVersion = @filemtime($publicPath . '/assets/js/admin/modules/theme.js') ?: time();
+$adminSidebarJsVersion = @filemtime($publicPath . '/assets/js/admin/modules/sidebar.js') ?: time();
+$adminModalJsVersion = @filemtime($publicPath . '/assets/js/admin/modules/modal.js') ?: time();
+$adminEditorJsVersion = @filemtime($publicPath . '/assets/js/admin/modules/editor.js') ?: time();
+$adminFormsJsVersion = @filemtime($publicPath . '/assets/js/admin/modules/forms.js') ?: time();
+$adminUploadPreviewJsVersion = @filemtime($publicPath . '/assets/js/admin/modules/upload-preview.js') ?: time();
 ?>
 
 <!DOCTYPE html>
@@ -102,6 +109,7 @@ $adminJsVersion = @filemtime($publicPath . '/assets/js/admin/index.js') ?: time(
                     <?php endif; ?>
 
                     <form class="admin-login-form" method="post" action="/admin/login">
+                        <?= \App\Core\Security\Csrf::field() ?>
                         <div class="admin-form-group admin-login-field">
                             <label class="admin-form-label" for="username">
                                 <span>用户名</span>
@@ -166,7 +174,14 @@ $adminJsVersion = @filemtime($publicPath . '/assets/js/admin/index.js') ?: time(
         </div>
     <?php endif; ?>
 
+    <script src="/assets/js/front/modules/theme.js?v=<?= $frontThemeJsVersion ?>"></script>
     <script src="/assets/js/front/index.js?v=<?= $frontJsVersion ?>"></script>
+    <script src="/assets/js/admin/modules/theme.js?v=<?= $adminThemeJsVersion ?>"></script>
+    <script src="/assets/js/admin/modules/sidebar.js?v=<?= $adminSidebarJsVersion ?>"></script>
+    <script src="/assets/js/admin/modules/modal.js?v=<?= $adminModalJsVersion ?>"></script>
+    <script src="/assets/js/admin/modules/editor.js?v=<?= $adminEditorJsVersion ?>"></script>
+    <script src="/assets/js/admin/modules/forms.js?v=<?= $adminFormsJsVersion ?>"></script>
+    <script src="/assets/js/admin/modules/upload-preview.js?v=<?= $adminUploadPreviewJsVersion ?>"></script>
     <script src="/assets/js/admin/index.js?v=<?= $adminJsVersion ?>"></script>
 </body>
 </html>

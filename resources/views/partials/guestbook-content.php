@@ -169,6 +169,7 @@ $guestbookSparkline = static function (array $values, int $width = 76, int $heig
 $renderGuestbookForm = static function () use ($guestbookFormAction, $guestbookOld): void {
     ?>
     <form class="guestbook-form" method="post" action="<?= htmlspecialchars($guestbookFormAction) ?>">
+        <?= \App\Core\Security\Csrf::field() ?>
         <label class="guestbook-field guestbook-form-full">
             <span class="guestbook-field-head">
                 <strong>留言内容</strong>

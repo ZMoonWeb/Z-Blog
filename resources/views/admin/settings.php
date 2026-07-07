@@ -115,6 +115,7 @@ foreach ($aboutLinkDefinitions as $definition) {
             <div class="admin-settings-form">
                 <div class="admin-settings-layout">
                     <form class="admin-settings-section" method="post" action="/admin/settings" enctype="multipart/form-data">
+                        <?= \App\Core\Security\Csrf::field() ?>
                         <input type="hidden" name="settings_scope" value="basic">
                         <div class="admin-settings-section-head">
                             <h3 class="admin-section-title">基础信息</h3>
@@ -176,6 +177,7 @@ foreach ($aboutLinkDefinitions as $definition) {
                     </form>
 
                     <form class="admin-settings-section admin-settings-home-section" method="post" action="/admin/settings" enctype="multipart/form-data">
+                        <?= \App\Core\Security\Csrf::field() ?>
                         <input type="hidden" name="settings_scope" value="home">
                         <div class="admin-settings-section-head">
                             <h3 class="admin-section-title">首页内容</h3>
@@ -257,6 +259,7 @@ foreach ($aboutLinkDefinitions as $definition) {
                     </form>
 
                     <form class="admin-settings-section" method="post" action="/admin/settings" enctype="multipart/form-data">
+                        <?= \App\Core\Security\Csrf::field() ?>
                         <input type="hidden" name="settings_scope" value="announcement">
                         <div class="admin-settings-section-head">
                             <h3 class="admin-section-title">侧栏公告</h3>
@@ -284,6 +287,7 @@ foreach ($aboutLinkDefinitions as $definition) {
                     </form>
 
                     <form class="admin-settings-section" method="post" action="/admin/settings" enctype="multipart/form-data">
+                        <?= \App\Core\Security\Csrf::field() ?>
                         <input type="hidden" name="settings_scope" value="about">
                         <div class="admin-settings-section-head">
                             <h3 class="admin-section-title">关于页</h3>
@@ -375,6 +379,7 @@ foreach ($aboutLinkDefinitions as $definition) {
                     </form>
 
                     <form class="admin-settings-section" method="post" action="/admin/settings" enctype="multipart/form-data">
+                        <?= \App\Core\Security\Csrf::field() ?>
                         <input type="hidden" name="settings_scope" value="guestbook">
                         <div class="admin-settings-section-head">
                             <h3 class="admin-section-title">留言板</h3>
@@ -403,6 +408,7 @@ foreach ($aboutLinkDefinitions as $definition) {
                     </form>
 
                     <form class="admin-settings-section" method="post" action="/admin/settings" enctype="multipart/form-data">
+                        <?= \App\Core\Security\Csrf::field() ?>
                         <input type="hidden" name="settings_scope" value="footer">
                         <div class="admin-settings-section-head">
                             <h3 class="admin-section-title">页脚</h3>
@@ -456,6 +462,12 @@ foreach ($aboutLinkDefinitions as $definition) {
         </main>
     </div>
 
+    <script src="/assets/js/admin/modules/theme.js?v=<?= time() ?>"></script>
+    <script src="/assets/js/admin/modules/sidebar.js?v=<?= time() ?>"></script>
+    <script src="/assets/js/admin/modules/modal.js?v=<?= time() ?>"></script>
+    <script src="/assets/js/admin/modules/editor.js?v=<?= time() ?>"></script>
+    <script src="/assets/js/admin/modules/forms.js?v=<?= time() ?>"></script>
+    <script src="/assets/js/admin/modules/upload-preview.js?v=<?= time() ?>"></script>
     <script src="/assets/js/admin/index.js?v=<?= time() ?>"></script>
 </body>
 </html>
